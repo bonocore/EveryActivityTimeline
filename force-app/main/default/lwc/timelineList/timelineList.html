@@ -1,14 +1,14 @@
 <template>
     <lightning-card> 
        <ul class="slds-timeline">
-            <template for:each={activities} for:item="activity">
-                <li key={activity.fields.Id.value}>
+            <template for:each={activities.data} for:item="activity">
+                <li key={activity.Id}>
                     <div class="slds-timeline__item_expandable slds-timeline__item_email slds-is-open">
-                        <span class="slds-assistive-text">{activity.fields.Name.value}</span>
+                        <span class="slds-assistive-text">{activity.Name}</span>
                         <div class="slds-media">
                             <div class="slds-media__figure">
                                 <lightning-button-icon icon-name="utility:switch"
-                                                        data-id={activity.fields.Id.value}
+                                                        data-id={activity.Id}
                                                         class="slds-timeline__details-action-icon" variant="bare"
                                                         onclick={handleSubSectionToggle}></lightning-button-icon>
                                 <div class="slds-icon_container slds-icon-standard-email slds-timeline__icon" title="email">
@@ -20,19 +20,19 @@
                                     <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
                                         <h3>
                                             <a href="#">
-                                            <strong>{activity.fields.Name.value}</strong>
+                                            <strong>{activity.title__c}</strong>
                                             </a>
                                         </h3>
                                         </div>
                                         <div class="slds-timeline__actions slds-timeline__actions_inline">
-                                            <p class="slds-timeline__date"><lightning-formatted-date-time value={activity.fields.LastModifiedDate.value} hour="2-digit" year="numeric" month="short" day="2-digit" hour12={ampm} minute="2-digit"></lightning-formatted-date-time></p>
+                                            <p class="slds-timeline__date"><lightning-formatted-date-time value={activity.LastModifiedDate} hour="2-digit" year="numeric" month="short" day="2-digit" hour12={ampm} minute="2-digit"></lightning-formatted-date-time></p>
                                             <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" title="More Options for this item">
                                                 <lightning-icon icon-name="utility:down" size="x-small" alternative-text="More Options for this item" title="More Options for this item"></lightning-icon>
                                             </button>
                                         </div>
                                 </div>
                                 <p class="slds-m-horizontal_xx-small">
-                                    {activity.fields.Description__c.value}
+                                    {activity.description__c}
                                 </p>
                             </div>
                         </div>
