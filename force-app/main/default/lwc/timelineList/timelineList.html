@@ -27,9 +27,10 @@
                                             </div>
                                             <div class="slds-timeline__actions slds-timeline__actions_inline">
                                                 <p class="slds-timeline__date"><lightning-formatted-date-time value={activity.createdDate__c} hour="2-digit" year="numeric" month="short" day="2-digit" hour12={ampm} minute="2-digit"></lightning-formatted-date-time></p>
-                                                <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" title="More Options for this item">
-                                                    <lightning-icon icon-name="utility:down" size="x-small" alternative-text="More Options for this item" title="More Options for this item"></lightning-icon>
-                                                </button>
+                                                <lightning-button-menu alternative-text="Show menu" menu-alignment="right" data-id={activity.Id} data-title={activity.title__c} onselect={handleMenuSelect}>
+                                                    <lightning-menu-item value="edit" label="Edit"  ></lightning-menu-item>
+                                                    <lightning-menu-item value="delete" label="Delete"></lightning-menu-item>
+                                                </lightning-button-menu>
                                             </div>
                                     </div>
                                     <p class="slds-m-horizontal_xx-small">

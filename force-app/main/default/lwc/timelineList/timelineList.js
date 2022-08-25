@@ -2,7 +2,9 @@ import { LightningElement,api,wire,track } from 'lwc';
 import getAllTimelineActivities from '@salesforce/apex/GB_Timeline_Activity_Controller.getAllTimelineActivities';
 import getLeadTimelineActivities from '@salesforce/apex/GB_Timeline_Activity_Controller.getLeadTimelineActivities';
 import { refreshApex } from '@salesforce/apex';
-
+import LightningConfirm from 'lightning/confirm';
+import { deleteRecord } from 'lightning/uiRecordApi';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class TimelineList extends LightningElement {
 
@@ -39,4 +41,34 @@ export default class TimelineList extends LightningElement {
         this.isActivityModalOpen = false;
         return refreshApex(this.wiredActivitiesResult);
     }
+    handleMenuSelect(event) {
+        if(event.detail.value === "delete")
+        {
+            this.deleteActivity(event.target.dataset.id,event.target.dataset.title);
+        }
+    }
+    deleteActivity(idToDel,titleToDel)
+    {
+        LightningConfirm.open({
+            message: 'Are you sure you want to delete the activity "'+titleToDel+'" ?',
+            theme: 'warning',
+            label: 'Confirm deletion',
+        }).then((result) => {
+            deleteRecord(idToDel).then(() => {
+                    this.dispatchEvent(
+                        new ShowToastEvent({
+                            title: 'Success',
+                            message: 'Record deleted successfully',
+                            variant: 'success'
+                        })
+                    );
+                    return refreshApex(this.wiredActivitiesResult);
+                    
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        });
+    }
+
 }
