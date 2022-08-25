@@ -1,0 +1,4 @@
+.slds-modal__content { /*hack for fixing combobox in modal glitch*/
+    overflow: visible;
+    overflow-y: visible;
+}

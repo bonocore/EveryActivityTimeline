@@ -43,5 +43,5 @@
         </template>    
         <lightning-button label="Add new activity" title="Add new activity" icon-name="utility:add" class="slds-m-left_x-small" onclick={openActivityModal}></lightning-button>
     </lightning-card>
-    <c-activity-modal is-activity-modal-open={isActivityModalOpen} title="Create new activity"  lead-id={recordId} onsuccess={submitActivityModal} onclose={closeActivityModal}></c-activity-modal>
+    <c-activity-modal-new is-activity-modal-open={isActivityModalOpen} title="Create new activity"  lead-id={recordId} onsuccess={submitActivityModal} onclose={closeActivityModal}></c-activity-modal-new>
 </template>

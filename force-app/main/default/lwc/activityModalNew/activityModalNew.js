@@ -1,6 +1,7 @@
 import { LightningElement,api  } from 'lwc';
+import { icons } from 'c/data';
 
-export default class ActivityModal extends LightningElement {
+export default class ActivityModalNew extends LightningElement {
 
     @api isActivityModalOpen = false;
     @api leadId;
@@ -8,12 +9,7 @@ export default class ActivityModal extends LightningElement {
 
 
     get icons() {
-        return [
-            { label: 'Default', value: 'standard:default' },
-            { label: 'Web', value: 'custom:custom68' },
-            { label: 'Mobile', value: 'custom:custom28' },
-            { label: 'Notification', value: 'custom:custom53' },
-        ];
+        return icons;
     }
     handleClose() {
         this.dispatchEvent(new CustomEvent('close'));
