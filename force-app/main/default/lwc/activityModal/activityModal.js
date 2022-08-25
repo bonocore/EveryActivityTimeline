@@ -8,5 +8,5 @@ export default class ActivityModal extends LightningElement {
     handleClose() {
         this.dispatchEvent(new CustomEvent('close'));
     }
-
+    
 }
