@@ -72,5 +72,15 @@ export default class TimelineList extends LightningElement {
                 });
         });
     }
-
+    handleSectionToggle(event) {
+        let buttonId = event.currentTarget.dataset.buttonId;
+        let currentsection = this.template.querySelector('[data-collapsible-section-id="' + buttonId + '"]');
+        if (currentsection.className.search('slds-is-open') == -1) {
+            currentsection.className = 'slds-timeline__item_expandable slds-is-open';
+            event.target.iconName='utility:chevrondown';
+        } else {
+            currentsection.className = 'slds-timeline__item_expandable slds-is-close';
+            event.target.iconName='utility:chevronright';
+        }
+    }
 }
