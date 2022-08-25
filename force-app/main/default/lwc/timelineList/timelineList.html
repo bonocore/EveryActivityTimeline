@@ -1,44 +1,48 @@
 <template>
     <lightning-card> 
-       <ul class="slds-timeline">
-            <template for:each={activities.data} for:item="activity">
-                <li key={activity.Id}>
-                    <div class="slds-timeline__item_expandable slds-timeline__item_email slds-is-open">
-                        <span class="slds-assistive-text">{activity.Name}</span>
-                        <div class="slds-media">
-                            <div class="slds-media__figure">
-                                <lightning-button-icon icon-name="utility:switch"
-                                                        data-id={activity.Id}
-                                                        class="slds-timeline__details-action-icon" variant="bare"
-                                                        onclick={handleSubSectionToggle}></lightning-button-icon>
-                                <div class="slds-icon_container slds-icon-standard-email slds-timeline__icon" title="email">
-                                    <lightning-icon icon-name="standard:email"  size="small" alternative-text="Received an email" title="Received an email"></lightning-icon>
+        <template if:true={activities}>
+            <ul class="slds-timeline">
+                <template for:each={activities} for:item="activity">
+                    <li key={activity.Id}>
+                        <div class="slds-timeline__item_expandable slds-timeline__item_email slds-is-open">
+                            <span class="slds-assistive-text">{activity.Name}</span>
+                            <div class="slds-media">
+                                <div class="slds-media__figure">
+                                    <lightning-button-icon icon-name="utility:switch"
+                                                            data-id={activity.Id}
+                                                            class="slds-timeline__details-action-icon" variant="bare"
+                                                            onclick={handleSubSectionToggle}></lightning-button-icon>
+                                    <div class="slds-icon_container slds-timeline__icon" title={activity.title__c}>
+                                        <lightning-icon icon-name={activity.icon__c}  size="small" alternative-text={activity.title__c} title={activity.title__c}></lightning-icon>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="slds-media__body">
-                                <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
-                                    <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
-                                        <h3>
-                                            <a href="#">
-                                            <strong>{activity.title__c}</strong>
-                                            </a>
-                                        </h3>
-                                        </div>
-                                        <div class="slds-timeline__actions slds-timeline__actions_inline">
-                                            <p class="slds-timeline__date"><lightning-formatted-date-time value={activity.LastModifiedDate} hour="2-digit" year="numeric" month="short" day="2-digit" hour12={ampm} minute="2-digit"></lightning-formatted-date-time></p>
-                                            <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" title="More Options for this item">
-                                                <lightning-icon icon-name="utility:down" size="x-small" alternative-text="More Options for this item" title="More Options for this item"></lightning-icon>
-                                            </button>
-                                        </div>
+                                <div class="slds-media__body">
+                                    <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
+                                        <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
+                                            <h3>
+                                                <a href="#">
+                                                <strong>{activity.title__c}</strong>
+                                                </a>
+                                            </h3>
+                                            </div>
+                                            <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                                <p class="slds-timeline__date"><lightning-formatted-date-time value={activity.createdDate__c} hour="2-digit" year="numeric" month="short" day="2-digit" hour12={ampm} minute="2-digit"></lightning-formatted-date-time></p>
+                                                <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" title="More Options for this item">
+                                                    <lightning-icon icon-name="utility:down" size="x-small" alternative-text="More Options for this item" title="More Options for this item"></lightning-icon>
+                                                </button>
+                                            </div>
+                                    </div>
+                                    <p class="slds-m-horizontal_xx-small">
+                                        {activity.description__c}
+                                    </p>
                                 </div>
-                                <p class="slds-m-horizontal_xx-small">
-                                    {activity.description__c}
-                                </p>
                             </div>
                         </div>
-                    </div>
-                </li>
-            </template>
-        </ul>
+                    </li>
+                </template>
+            </ul>
+        </template>    
+        <lightning-button label="Add new activity" title="Add new activity" icon-name="utility:add" class="slds-m-left_x-small" onclick={openActivityModal}></lightning-button>
     </lightning-card>
+    <c-activity-modal is-activity-modal-open={isActivityModalOpen} title="Create new activity"  lead-id={recordId} onsuccess={submitActivityModal} onclose={closeActivityModal}></c-activity-modal>
 </template>
