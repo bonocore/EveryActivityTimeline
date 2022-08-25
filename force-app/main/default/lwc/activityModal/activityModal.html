@@ -3,7 +3,7 @@
         <!-- Modal for activity editing / creating-->
         <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
             <div class="slds-modal__container">
-                <lightning-record-edit-form object-api-name="GB_Timeline_Activity__c">
+                <lightning-record-edit-form object-api-name="GB_Timeline_Activity__c" onsubmit={handleSubmit}>
                 <!-- Modal header -->
                 <header class="slds-modal__header">
                     <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleClose}>
@@ -17,11 +17,19 @@
                 </header>
                 <!-- Modal body-->
                 <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
-                        <lightning-input-field field-name="title__c"> </lightning-input-field>
-                        <lightning-input-field field-name="description__c"> </lightning-input-field>
-                        <lightning-input-field field-name="createdDate__c"></lightning-input-field>
-                        <lightning-input-field field-name="icon__c"></lightning-input-field>
-                        <lightning-input-field field-name="Lead__c" value={leadId}></lightning-input-field>
+                        <lightning-input-field field-name="title__c" required> </lightning-input-field>
+                        <lightning-input-field field-name="description__c" required> </lightning-input-field>
+                        <lightning-input-field field-name="createdDate__c" required></lightning-input-field>
+                        <lightning-input-field field-name="icon__c" class="slds-hide"></lightning-input-field>
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_10-of-12">
+                                <lightning-combobox name="progress" value={iconValue} label="Icon" options={icons} onchange={handleIconChange} dropdown-alignment="bottom-left" ></lightning-combobox>
+                            </div>
+                            <div class="slds-col slds-size_2-of-12 slds-align_absolute-center">
+                                <lightning-icon icon-name={iconValue} size="large" ></lightning-icon>
+                            </div>
+                        </div>
+                        <lightning-input-field field-name="Lead__c" value={leadId} required></lightning-input-field>
                 </div>
                 <!-- Modal footer-->
                 <footer class="slds-modal__footer">

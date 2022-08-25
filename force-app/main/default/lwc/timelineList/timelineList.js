@@ -16,6 +16,8 @@ export default class TimelineList extends LightningElement {
 
     wiredActivitiesResult; //useful for forcing refresh
 
+    
+
     @wire(getLeadTimelineActivities, {leadId: '$recordId'}) 
     wiredActivities(result){
         this.wiredActivitiesResult=result;
