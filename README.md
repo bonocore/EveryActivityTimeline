@@ -98,13 +98,17 @@ Once installed, you can simply click on the Edit Page for the Lead record page, 
 Each activity can have an associated Icon, as per the [LDS Icons](https://www.lightningdesignsystem.com/icons/).
 Supported icons are defined in /force-app/main/default/lwc/data/data.js . Edit it if you need more.
 
-[![Watch the video](https://img.youtube.com/vi/XnifV3ay9Tk/default.jpg)](https://youtu.be/XnifV3ay9Tk)
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=XnifV3ay9Tk" target="_blank">
+ <img src="http://img.youtube.com/vi/XnifV3ay9Tk/sddefault.jpg" alt="Watch the video" width="240" height="180"  />
+</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Demo
 
-[![Watch the video](https://img.youtube.com/vi/8AL4W2a9Exw/default.jpg)](https://youtu.be/8AL4W2a9Exw)
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=8AL4W2a9Exw" target="_blank">
+ <img src="http://img.youtube.com/vi/8AL4W2a9Exw/sddefault.jpg" alt="Watch the video" width="240" height="180" />
+</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
