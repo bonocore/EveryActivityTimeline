@@ -6,7 +6,7 @@ export default class ActivityModalNew extends LightningElement {
     @api isActivityModalOpen = false;
     @api leadId;
     iconValue='standard:default';
-
+    
 
     get icons() {
         return icons;
@@ -22,5 +22,6 @@ export default class ActivityModalNew extends LightningElement {
         const fields = event.detail.fields;
         fields.icon__c = this.iconValue;
         this.template.querySelector('lightning-record-edit-form').submit(fields);
+        iconValue='standard:default';
      }
 }
