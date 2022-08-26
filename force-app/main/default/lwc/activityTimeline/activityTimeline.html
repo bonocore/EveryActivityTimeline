@@ -31,7 +31,7 @@
                                                 </lightning-button-menu>
                                             </div>
                                     </div>
-                                    <article class="slds-timeline__item_details">
+                                    <article class="slds-timeline__item_details" style="padding: 0;">
                                           <p class="slds-p-top_x-small">{activity.description__c}</p>
                                     </article>
                                 </div>
@@ -40,8 +40,10 @@
                     </li>
                 </template>
             </ul>
-        </template>    
-        <lightning-button label="Add new activity" title="Add new activity" icon-name="utility:add" class="slds-m-left_x-small" onclick={openActivityModal}></lightning-button>
+        </template>
+        <template if:true={showNewActivityButton}>    
+            <lightning-button label="Add new activity" title="Add new activity" icon-name="utility:add" class="slds-m-left_x-small" onclick={openActivityModal}></lightning-button>
+        </template>
     </lightning-card>
     <c-activity-modal-new is-activity-modal-open={isActivityModalOpen} title="Create new activity"  lead-id={recordId} onsuccess={submitActivityModal} onclose={closeActivityModal}></c-activity-modal-new>
 </template>

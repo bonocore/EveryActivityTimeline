@@ -6,13 +6,16 @@ import LightningConfirm from 'lightning/confirm';
 import { deleteRecord } from 'lightning/uiRecordApi';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
-export default class TimelineList extends LightningElement {
+export default class ActivityTimeline extends LightningElement {
 
     @api recordId;
 
     @track isActivityModalOpen = false;
 
     @track activities;
+
+    @api showNewActivityButton;
+
 
     wiredActivitiesResult; //useful for forcing refresh
 
