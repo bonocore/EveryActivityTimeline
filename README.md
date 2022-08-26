@@ -99,7 +99,7 @@ Each activity can have an associated Icon, as per the [LDS Icons](https://www.li
 Supported icons are defined in /force-app/main/default/lwc/data/data.js . Edit it if you need more.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=XnifV3ay9Tk" target="_blank">
- <img src="http://img.youtube.com/vi/XnifV3ay9Tk/sddefault.jpg" alt="Watch the video" width="240" height="180"  />
+ <img src="http://img.youtube.com/vi/XnifV3ay9Tk/sddefault.jpg" alt="Watch the video" />
 </a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -107,7 +107,7 @@ Supported icons are defined in /force-app/main/default/lwc/data/data.js . Edit i
 ## Demo
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=8AL4W2a9Exw" target="_blank">
- <img src="http://img.youtube.com/vi/8AL4W2a9Exw/sddefault.jpg" alt="Watch the video" width="240" height="180" />
+ <img src="http://img.youtube.com/vi/8AL4W2a9Exw/sddefault.jpg" alt="Watch the video" />
 </a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
