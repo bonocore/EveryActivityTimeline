@@ -98,7 +98,7 @@ Once installed, you can simply click on the Edit Page for the Lead record page, 
 Each activity can have an associated Icon, as per the [LDS Icons](https://www.lightningdesignsystem.com/icons/).
 Supported icons are defined in /force-app/main/default/lwc/data/data.js . Edit it if you need more.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=XnifV3ay9Tk" target="_blank">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XnifV3ay9Tk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  <img src="http://img.youtube.com/vi/XnifV3ay9Tk/sddefault.jpg" alt="Watch the video" />
 </a>
 
@@ -106,10 +106,7 @@ Supported icons are defined in /force-app/main/default/lwc/data/data.js . Edit i
 
 ## Demo
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=8AL4W2a9Exw" target="_blank">
- <img src="http://img.youtube.com/vi/8AL4W2a9Exw/sddefault.jpg" alt="Watch the video" />
-</a>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8AL4W2a9Exw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
