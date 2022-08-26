@@ -10,12 +10,14 @@ export default class ActivityTimeline extends LightningElement {
 
     @api recordId;
 
-    @track isActivityModalOpen = false;
+    @track isActivityModalNewOpen = false;
+    @track isActivityModalEditOpen = false;
 
     @track activities;
 
     @api showNewActivityButton;
 
+    @api activityToEditId;
 
     wiredActivitiesResult; //useful for forcing refresh
 
@@ -36,17 +38,30 @@ export default class ActivityTimeline extends LightningElement {
       }
 
     
-    openActivityModal() {
-        this.isActivityModalOpen = true;
+    openActivityModalNew() {
+        this.isActivityModalNewOpen = true;
     }
-    closeActivityModal() {
-        this.isActivityModalOpen = false;
+    closeActivityModalNew() {
+        this.isActivityModalNewOpen = false;
     }
-    submitActivityModal() {
-        this.isActivityModalOpen = false;
+    submitActivityModaNew() {
+        this.isActivityModalNewOpen = false;
+        return refreshApex(this.wiredActivitiesResult);
+    }
+    closeActivityModalEdit() {
+        this.isActivityModalEditOpen = false;
+    }
+    submitActivityModalEdit() {
+        this.isActivityModalEditOpen = false;
         return refreshApex(this.wiredActivitiesResult);
     }
     handleMenuSelect(event) {
+        if(event.detail.value === "edit")
+        {
+            this.activityToEditId=event.target.dataset.id;
+            this.isActivityModalEditOpen = true;
+
+        }
         if(event.detail.value === "delete")
         {
             this.deleteActivity(event.target.dataset.id,event.target.dataset.title);

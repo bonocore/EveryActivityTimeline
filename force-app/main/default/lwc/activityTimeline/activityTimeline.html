@@ -7,7 +7,7 @@
                         <div class="slds-timeline__item_expandable slds-is-open" data-collapsible-section-id={activity.Id}>
                             <span class="slds-assistive-text">{activity.Name}</span>
                             <div class="slds-media">
-                                <div class="slds-media__figure">
+                                <div class="slds-media__figure" style="padding-top: 5px;">
                                     <lightning-button-icon icon-name="utility:switch"
                                                             data-button-id={activity.Id}
                                                             class="slds-timeline__details-action-icon" variant="bare"
@@ -42,8 +42,9 @@
             </ul>
         </template>
         <template if:true={showNewActivityButton}>    
-            <lightning-button label="Add new activity" title="Add new activity" icon-name="utility:add" class="slds-m-left_x-small" onclick={openActivityModal}></lightning-button>
+            <lightning-button label="Add new activity" title="Add new activity" icon-name="utility:add" class="slds-m-left_x-small" onclick={openActivityModalNew}></lightning-button>
         </template>
     </lightning-card>
-    <c-activity-modal-new is-activity-modal-open={isActivityModalOpen} title="Create new activity"  lead-id={recordId} onsuccess={submitActivityModal} onclose={closeActivityModal}></c-activity-modal-new>
+    <c-activity-modal-new is-activity-modal-new-open={isActivityModalNewOpen} title="Create new activity"  lead-id={recordId} onsuccess={submitActivityModaNew} onclose={closeActivityModalNew}></c-activity-modal-new>
+    <c-activity-modal-edit is-activity-modal-edit-open={isActivityModalEditOpen} title="Edit activity" activity-id={activityToEditId} onsuccess={submitActivityModalEdit} onclose={closeActivityModalEdit}></c-activity-modal-edit>
 </template>

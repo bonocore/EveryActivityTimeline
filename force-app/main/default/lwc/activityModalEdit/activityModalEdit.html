@@ -1,9 +1,9 @@
 <template>
-    <template if:true={isActivityModalNewOpen}>
-        <!-- Modal for activity creating-->
+    <template if:true={isActivityModalEditOpen}>
+        <!-- Modal for activity editing-->
         <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
             <div class="slds-modal__container">
-                <lightning-record-edit-form object-api-name="GB_Timeline_Activity__c" onsubmit={handleSubmit}>
+                <lightning-record-edit-form record-id={activityId} object-api-name="GB_Timeline_Activity__c" onload={handleOnLoad} onsubmit={handleSubmit}>
                 <!-- Modal header -->
                 <header class="slds-modal__header">
                     <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleClose}>
@@ -29,12 +29,12 @@
                                 <lightning-icon icon-name={iconValue} size="large" ></lightning-icon>
                             </div>
                         </div>
-                        <lightning-input-field field-name="Lead__c" value={leadId} required></lightning-input-field>
+                        <lightning-input-field field-name="Lead__c" disabled></lightning-input-field>
                 </div>
                 <!-- Modal footer-->
                 <footer class="slds-modal__footer">
                     <lightning-button class="slds-m-top_small" label="Cancel" onclick={handleClose}></lightning-button>
-                    <lightning-button class="slds-m-top_small" type="submit" label="Create new"></lightning-button>
+                    <lightning-button class="slds-m-top_small" type="submit" label="Update"></lightning-button>
                 </footer>
             </lightning-record-edit-form>
             </div>
