@@ -98,13 +98,13 @@ Once installed, you can simply click on the Edit Page for the Lead record page, 
 Each activity can have an associated Icon, as per the [LDS Icons](https://www.lightningdesignsystem.com/icons/).
 Supported icons are defined in /force-app/main/default/lwc/data/data.js . Edit it if you need more.
 
-https://github.com/bonocore/LeadActivityTimelineDemo/blob/master/images/timelineUsage.mp4?raw=true
+[![Watch the video](https://img.youtube.com/vi/XnifV3ay9Tk/default.jpg)](https://youtu.be/XnifV3ay9Tk)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Demo
 
-https://github.com/bonocore/LeadActivityTimelineDemo/blob/master/images/timelineDemo.mp4?raw=true
+[![Watch the video](https://img.youtube.com/vi/8AL4W2a9Exw/default.jpg)](https://youtu.be/8AL4W2a9Exw)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
