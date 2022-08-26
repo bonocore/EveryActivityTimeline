@@ -72,7 +72,9 @@ Some notable points:
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [Lightning Web Components](https://lwc.dev/) ![LWC](https://webcomponents.dev/assets/lib/lwc.svg | width=100)
+* [Lightning Web Components](https://lwc.dev/) <img src="https://webcomponents.dev/assets/lib/lwc.svg " width="24"/> 
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
