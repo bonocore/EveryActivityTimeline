@@ -17,7 +17,7 @@
     An LWC component to display engagement activities (based on a custom object, not the standard SFDC activities) on a lead record page
     <br />
     <br />
-    <a href="#">View Demo</a>
+    <a href="#Demo">View Demo</a>
     ·
     <a href="https://github.com/bonocore/LeadActivityTimelineDemo/issues">Report Bug</a>
     ·
@@ -74,6 +74,8 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 This component is packaged as a Salesforce DX project. /force-app/main/default/lwc contains the logic (HTML and JS), while /force-app/main/default/objects/ contain the custom object definition. /force-app/main/default/permissionsets contains the permissions for the custom object and the relations to the standard Lead object.
 
+https://github.com/bonocore/LeadActivityTimelineDemo/blob/master/images/timelineDemo.mp4?raw=true
+
 ### Installation
 
 Since this component is a Salesforce DX project, if you have a local SFDX cli installation, you can simply download and install using [sfdx force:source:deploy](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_source.htm#cli_reference_force_source_deploy)
@@ -95,6 +97,14 @@ Otherwise, you can try to install it on a dev org using this (unofficial) tool:
 Once installed, you can simply click on the Edit Page for the Lead record page, and you will find "Lead activities timeline" component under the "Custom" section of the Components list. Drag and drop in your page and you are good to go. Please note that you can configure the component in order to show the "Add new activity" button or hide it. Once the component is in place, you can add new activities, edit or delete existing activities (arrow menu on the right of each activity), and expand / collapse each activity details (arrow button on the left of each activity).
 Each activity can have an associated Icon, as per the [LDS Icons](https://www.lightningdesignsystem.com/icons/).
 Supported icons are defined in /force-app/main/default/lwc/data/data.js . Edit it if you need more.
+
+https://github.com/bonocore/LeadActivityTimelineDemo/blob/master/images/timelineUsage.mp4?raw=true
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Demo
+
+https://github.com/bonocore/LeadActivityTimelineDemo/blob/master/images/timelineDemo.mp4?raw=true
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
