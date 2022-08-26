@@ -72,9 +72,8 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This component is packaged as a Salesforce DX project. /force-app/main/default/lwc contains the logic (HTML and JS), while /force-app/main/default/objects/ contain the custom object definition. /force-app/main/default/permissionsets contains the permissions for the custom object and the relations to the standard Lead object.
+This component is packaged as a Salesforce DX project. /force-app/main/default/lwc contains the logic (HTML and JS), while /force-app/main/default/objects/ contain the custom object definition. /force-app/main/default/permissionsets contains the permissions for the custom object and the relationship to the standard Lead object.
 
-https://github.com/bonocore/LeadActivityTimelineDemo/blob/master/images/timelineDemo.mp4?raw=true
 
 ### Installation
 
@@ -98,15 +97,22 @@ Once installed, you can simply click on the Edit Page for the Lead record page, 
 Each activity can have an associated Icon, as per the [LDS Icons](https://www.lightningdesignsystem.com/icons/).
 Supported icons are defined in /force-app/main/default/lwc/data/data.js . Edit it if you need more.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XnifV3ay9Tk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- <img src="http://img.youtube.com/vi/XnifV3ay9Tk/sddefault.jpg" alt="Watch the video" />
-</a>
+
+
+https://user-images.githubusercontent.com/10563607/186936444-fe19cb61-eb2c-40f7-9803-bae2fabfbb99.mp4
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Demo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8AL4W2a9Exw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+https://user-images.githubusercontent.com/10563607/186936974-24f1f7a3-77e7-4afc-9177-d3151c79b86a.mp4
+
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
