@@ -88,6 +88,8 @@ Otherwise, you can try to install it on a dev org using this (unofficial) tool:
     </a>
 </p>    
 
+**NB: This component contains both the Admin profile and permission set for granting the visibility on the custom object and its fields. However, depending on your installation method, you may need to manually assign the permissions. If you have any strange visibility issue (e.g. when clicking on "Add new activity" you don't see all the fields), simply assign the "GB Timeline Activity Permset" permission set to your user, from the SF setup menu**
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
@@ -97,7 +99,7 @@ Once installed, you can simply click on the Edit Page for the Lead record page, 
 Each activity can have an associated Icon, as per the [LDS Icons](https://www.lightningdesignsystem.com/icons/).
 Supported icons are defined in /force-app/main/default/lwc/data/data.js . Edit it if you need more.
 
-**NB: This component contains both the Admin profile and permission set for granting the visibility on the custom object and its fields. However, depending on your installation method, you may need to manually assign the permissions. If you have any strange visibility issue (e.g. when clicking on "Add new activity" you don't see all the fields), simply assign the "GB Timeline Activity Permset" permission set to your user, from the SF setup menu**
+
 
 
 https://user-images.githubusercontent.com/10563607/186936444-fe19cb61-eb2c-40f7-9803-bae2fabfbb99.mp4
