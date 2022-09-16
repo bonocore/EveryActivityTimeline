@@ -6,13 +6,19 @@
     <description>A demo LWC component to show the engagement activities (GB_Timeline_Activity__c custom object) of a lead</description>
     <targets>
       <target>lightning__RecordPage</target>
-    </targets>
-    <targetConfigs>
+      <target>lightningCommunity__Page</target>
+      <target>lightningCommunity__Default</target>
+  </targets>
+  <targetConfigs>
+      <targetConfig targets="lightningCommunity__Default">
+        <property name="showNewActivityButton" label="Show the 'Add new activity' button" type="Boolean" default="true" required="true"/>
+        <property name="recordId" type="String" label="Record ID" description="The value should be {!recordId}."/>
+      </targetConfig>
       <targetConfig targets="lightning__RecordPage">
           <objects>
               <object>Lead</object>
           </objects>
           <property name="showNewActivityButton" label="Show the 'Add new activity' button" type="Boolean" default="true" required="true"/>
-      </targetConfig>
+      </targetConfig>      
   </targetConfigs>
 </LightningComponentBundle>
