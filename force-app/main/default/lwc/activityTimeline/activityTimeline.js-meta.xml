@@ -12,7 +12,7 @@
   <targetConfigs>
       <targetConfig targets="lightningCommunity__Default">
         <property name="showNewActivityButton" label="Show the 'Add new activity' button" type="Boolean" default="true" required="true"/>
-        <property name="recordId" type="String" label="Record ID" description="The value should be {!recordId}."/>
+        <property name="recordId" type="String" label="Record ID" description="The value should be {!recordId}." default="{!recordId}"/>
       </targetConfig>
       <targetConfig targets="lightning__RecordPage">
           <objects>

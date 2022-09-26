@@ -25,8 +25,7 @@ export default class ActivityTimeline extends LightningElement {
 
     @wire(getLeadTimelineActivities, {leadId: '$recordId'}) 
     wiredActivities(result){
-        console.log("Retrieving activities for "+recordId );
-        
+       
         this.wiredActivitiesResult=result;
         if (result.data) {
           this.activities = result.data;

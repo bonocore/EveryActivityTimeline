@@ -12,7 +12,7 @@ public with sharing class GB_Timeline_Activity_Controller {
                 Lead__c
             FROM GB_Timeline_Activity__c
             WITH SECURITY_ENFORCED
-            ORDER BY Name
+            ORDER BY createdDate__c DESC
             LIMIT 50
         ];
     }
@@ -38,7 +38,7 @@ public with sharing class GB_Timeline_Activity_Controller {
             FROM GB_Timeline_Activity__c
             WHERE Lead__c = :leadId
             WITH SECURITY_ENFORCED
-            ORDER BY Name
+            ORDER BY createdDate__c DESC
             LIMIT 50
         ];
     }
