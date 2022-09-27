@@ -14,7 +14,7 @@
   <h3 align="center">Timeline Activities for Salesforce objects</h3>
 
   <p align="center">
-    An LWC component to display engagement activities (based on a custom object, not the standard SFDC activities) on a object record page (es. Leads, Accounts...)
+    An LWC component to display engagement activities (based on a custom object, not the standard SFDC activities) on an object record page (es. Leads, Accounts...)
     <br />
     <br />
     <a href="#Demo">View Demo</a>
@@ -101,7 +101,15 @@ Supported icons are defined in /force-app/main/default/lwc/data/data.js . Edit i
 
 
 
-https://user-images.githubusercontent.com/10563607/186936444-fe19cb61-eb2c-40f7-9803-bae2fabfbb99.mp4
+
+
+https://user-images.githubusercontent.com/10563607/192561472-559b0c0d-670b-4561-8d81-4427e76490b7.mp4
+
+
+<br/>
+
+
+https://user-images.githubusercontent.com/10563607/192561496-8d1c6152-8e98-4f17-bc8d-5773f8b17640.mp4
 
 
 
@@ -111,8 +119,7 @@ https://user-images.githubusercontent.com/10563607/186936444-fe19cb61-eb2c-40f7-
 
 
 
-https://user-images.githubusercontent.com/10563607/186936974-24f1f7a3-77e7-4afc-9177-d3151c79b86a.mp4
-
+https://user-images.githubusercontent.com/10563607/192561631-7b114513-4739-4489-b229-7dfc88fc2f70.mp4
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
