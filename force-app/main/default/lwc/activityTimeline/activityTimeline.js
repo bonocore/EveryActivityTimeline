@@ -1,6 +1,6 @@
 import { LightningElement,api,wire,track } from 'lwc';
 import getAllTimelineActivities from '@salesforce/apex/GB_Timeline_Activity_Controller.getAllTimelineActivities';
-import getLeadTimelineActivities from '@salesforce/apex/GB_Timeline_Activity_Controller.getLeadTimelineActivities';
+import getRelatedTimelineActivities from '@salesforce/apex/GB_Timeline_Activity_Controller.getRelatedTimelineActivities';
 import { refreshApex } from '@salesforce/apex';
 import LightningConfirm from 'lightning/confirm';
 import { deleteRecord } from 'lightning/uiRecordApi';
@@ -23,7 +23,7 @@ export default class ActivityTimeline extends LightningElement {
 
     
 
-    @wire(getLeadTimelineActivities, {leadId: '$recordId'}) 
+    @wire(getRelatedTimelineActivities, {relatedToId: '$recordId'}) 
     wiredActivities(result){
        
         this.wiredActivitiesResult=result;

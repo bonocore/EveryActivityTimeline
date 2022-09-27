@@ -9,7 +9,7 @@ public with sharing class GB_Timeline_Activity_Controller {
                 description__c,
                 createdDate__c,
                 icon__c,
-                Lead__c
+                related_to__c
             FROM GB_Timeline_Activity__c
             WITH SECURITY_ENFORCED
             ORDER BY createdDate__c DESC
@@ -18,11 +18,11 @@ public with sharing class GB_Timeline_Activity_Controller {
     }
     
     @AuraEnabled(cacheable=true scope='global')
-    public static GB_Timeline_Activity__c[] getLeadTimelineActivities(String leadId) {
+    public static GB_Timeline_Activity__c[] getRelatedTimelineActivities(String relatedToId) {
          // Return all data when no search term
-         leadId = leadId.trim();
-         if (leadId == '') {
-             return getAllTImelineActivities();
+         relatedToId = relatedToId.trim();
+         if (relatedToId == '') {
+             return null;
          }
        
          // Execute search query
@@ -34,9 +34,9 @@ public with sharing class GB_Timeline_Activity_Controller {
                 description__c,
                 createdDate__c,
                 icon__c,
-                Lead__c
+                related_to__c
             FROM GB_Timeline_Activity__c
-            WHERE Lead__c = :leadId
+            WHERE related_to__c = :relatedToId
             WITH SECURITY_ENFORCED
             ORDER BY createdDate__c DESC
             LIMIT 50

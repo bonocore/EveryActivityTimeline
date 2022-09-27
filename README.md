@@ -11,17 +11,17 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>-->
 
-  <h3 align="center">Timeline Activities for Salesforce leads</h3>
+  <h3 align="center">Timeline Activities for Salesforce objects</h3>
 
   <p align="center">
-    An LWC component to display engagement activities (based on a custom object, not the standard SFDC activities) on a lead record page
+    An LWC component to display engagement activities (based on a custom object, not the standard SFDC activities) on a object record page (es. Leads, Accounts...)
     <br />
     <br />
     <a href="#Demo">View Demo</a>
     ·
-    <a href="https://github.com/bonocore/LeadActivityTimelineDemo/issues">Report Bug</a>
+    <a href="https://github.com/bonocore/EveryActivityTimeline/issues">Report Bug</a>
     ·
-    <a href="https://github.com/bonocore/LeadActivityTimelineDemo/issues">Request Feature</a>
+    <a href="https://github.com/bonocore/EveryActivityTimeline/issues">Request Feature</a>
    </p>
 </div>
 
@@ -52,18 +52,17 @@
 
 [![Product Name Screen Shot][product-screenshot]](product-screenshot)
 
-A basic lightning web component useful for displaying engagement activities in a timeline ui.
+A basic lightning web component useful for displaying engagement activities (e.g. "Lead visited the website", "Account signed the contract") in a timeline ui.
 Some notable points:
 * It follows best practices of LDS: https://www.lightningdesignsystem.com/components/activity-timeline/
-* For the sake of simplicity and flexibility it doesn't use standard SFDC activities. Instead, it use a custom object (GB_Timeline_Activity__c). See [Object folder](https://github.com/bonocore/LeadActivityTimelineDemo/tree/master/force-app/main/default/objects/GB_Timeline_Activity__c)
-* It is currently bound to the Lead standard SFDC object. It could easily be extended for managing more objects (Standard and custom)
-* It supports add, edit and delete of such objects
-
+* For the sake of simplicity and flexibility it doesn't use standard SFDC activities. Instead, it use a custom object (GB_Timeline_Activity__c). See [Object folder](https://github.com/bonocore/EveryActivityTimeline/tree/master/force-app/main/default/objects/GB_Timeline_Activity__c)
+* The activities created can be bound to every SF object (Standard and custom). Notable examples: Leads, Accounts, Contacts...
+* It supports add, edit and delete of such activities
+* It open interesting use cases. You may easily create flows that create such activities on other events (e.g. when a sales is completed, when a case is escalated...), in order to easily visualized in a timeline in the target object record page (e.g. the account or contact involved)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [Lightning Web Components](https://lwc.dev/) <img src="https://webcomponents.dev/assets/lib/lwc.svg" width="24"/> 
 
@@ -72,7 +71,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This component is packaged as a Salesforce DX project. /force-app/main/default/lwc contains the logic (HTML and JS), while /force-app/main/default/objects/ contain the custom object definition. /force-app/main/default/permissionsets contains the permissions for the custom object and the relationship to the standard Lead object.
+This component is packaged as a Salesforce DX project. /force-app/main/default/lwc contains the logic (HTML and JS), while /force-app/main/default/objects/ contain the custom object definition. /force-app/main/default/permissionsets contains the permissions for the activity custom object  (GB_Timeline_Activity__c).
 
 
 ### Installation
@@ -82,7 +81,7 @@ Since this component is a Salesforce DX project, if you have a local SFDX cli in
 Otherwise, you can try to install it on a dev org using this (unofficial) tool:
 
 <p align="center">
-    <a href="https://githubsfdeploy.herokuapp.com?owner=bonocore&repo=LeadActivityTimelineDemo&ref=master">
+    <a href="https://githubsfdeploy.herokuapp.com?owner=bonocore&repo=EveryActivityTimeline&ref=master">
             <img alt="Deploy to Salesforce"
                 src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
     </a>
@@ -95,7 +94,7 @@ Otherwise, you can try to install it on a dev org using this (unofficial) tool:
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Once installed, you can simply click on the Edit Page for the Lead record page, and you will find "Lead activities timeline" component under the "Custom" section of the Components list. Drag and drop in your page and you are good to go. Please note that you can configure the component in order to show the "Add new activity" button or hide it. Once the component is in place, you can add new activities, edit or delete existing activities (arrow menu on the right of each activity), and expand / collapse each activity details (arrow button on the left of each activity).
+Once installed, you can simply click on the Edit Page for the record page of choice (e.g. Lead, Account, Contact...), and you will find "Every activity timeline" component under the "Custom" section of the Components list. Drag and drop in your page and you are good to go. You can add the component in communities pages too. Please note that you can configure the component in order to show the "Add new activity" button or hide it. Once the component is in place, you can add new activities, edit or delete existing activities (arrow menu on the right of each activity), and expand / collapse each activity details (arrow button on the left of each activity).
 Each activity can have an associated Icon, as per the [LDS Icons](https://www.lightningdesignsystem.com/icons/).
 Supported icons are defined in /force-app/main/default/lwc/data/data.js . Edit it if you need more.
 
@@ -125,7 +124,6 @@ https://user-images.githubusercontent.com/10563607/186936974-24f1f7a3-77e7-4afc-
 - [x] Edit activities
 - [x] Delete activity
 - [ ] Add a "generate random activities" for demo purposes
-- [ ] Support objects other than Lead
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -160,7 +158,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Giuseppe Bonocore - [![LinkedIn][linkedin-shield]][linkedin-url] [@gbonocore](https://twitter.com/gbonocore) - giuseppe.bonocore@gmail.com
 
-Project Link: [https://github.com/bonocore/LeadActivityTimelineDemo](https://github.com/bonocore/LeadActivityTimelineDemo)
+Project Link: [https://github.com/bonocore/EveryActivityTimeline](https://github.com/bonocore/EveryActivityTimeline)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -169,7 +167,7 @@ Project Link: [https://github.com/bonocore/LeadActivityTimelineDemo](https://git
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/bonocore/LeadActivityTimelineDemo/blob/master/LICENSE.txt
+[license-url]: https://github.com/bonocore/EveryActivityTimeline/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/giuseppebonocore/
 [product-screenshot]: images/screenshot.png

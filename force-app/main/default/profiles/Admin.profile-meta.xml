@@ -7,7 +7,7 @@
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
-        <field>GB_Timeline_Activity__c.Lead__c</field>
+        <field>GB_Timeline_Activity__c.related_to__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

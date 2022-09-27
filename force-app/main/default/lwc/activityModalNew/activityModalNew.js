@@ -4,7 +4,7 @@ import { icons } from 'c/data';
 export default class ActivityModalNew extends LightningElement {
 
     @api isActivityModalNewOpen = false;
-    @api leadId;
+    @api relatedToId;
     iconValue='standard:default';
 
 

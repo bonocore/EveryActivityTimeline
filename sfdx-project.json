@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "LeadActivityTimelineDemo",
+  "name": "EveryActivityTimeline",
   "namespace": "GB_sf-se-ita-demo-components",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "55.0"
