@@ -58,7 +58,7 @@ Some notable points:
 * For the sake of simplicity and flexibility it doesn't use standard SFDC activities. Instead, it use a custom object (GB_Timeline_Activity__c). See [Object folder](https://github.com/bonocore/EveryActivityTimeline/tree/master/force-app/main/default/objects/GB_Timeline_Activity__c)
 * The activities created can be bound to every SF object (Standard and custom). Notable examples: Leads, Accounts, Contacts...
 * It supports add, edit and delete of such activities
-* It open interesting use cases. You may easily create flows that create such activities on other events (e.g. when a sales is completed, when a case is escalated...), in order to easily visualized in a timeline in the target object record page (e.g. the account or contact involved)
+* It open interesting use cases. You may easily create flows that create such activities on other events (e.g. when a sales is completed, when a case is escalated...), in order to easily visualised in a timeline in the target object record page (e.g. the account or contact involved)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
