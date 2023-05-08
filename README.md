@@ -59,6 +59,8 @@ Some notable points:
 * The activities created can be bound to every SF object (Standard and custom). Notable examples: Leads, Accounts, Contacts...
 * It supports add, edit and delete of such activities
 * It open interesting use cases. You may easily create flows that create such activities on other events (e.g. when a sales is completed, when a case is escalated...), in order to easily visualized in a timeline in the target object record page (e.g. the account or contact involved)
+* NEW: You can now simulate the streaming of new activities coming
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
@@ -98,7 +100,7 @@ Once installed, you can simply click on the Edit Page for the record page of cho
 Each activity can have an associated Icon, as per the [LDS Icons](https://www.lightningdesignsystem.com/icons/).
 Supported icons are defined in /force-app/main/default/lwc/data/data.js . Edit it if you need more.
 
-
+NEW: when you create a new activity (or edit an existing one), you can now flag it to be initially hidden (checkbox "stream hide"). Those activities will then  be shown, one by one, if you click on the small icon aside to the "add new activity" button 
 
 
 https://user-images.githubusercontent.com/10563607/186936444-fe19cb61-eb2c-40f7-9803-bae2fabfbb99.mp4

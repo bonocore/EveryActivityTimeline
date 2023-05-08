@@ -1,49 +1,55 @@
 <template>
     <lightning-card> 
-        <template if:true={activities}>
-            <ul class="slds-timeline slds-p-left_x-small">
-                <template for:each={activities} for:item="activity">
-                    <li key={activity.Id}>
-                        <div class="slds-timeline__item_expandable slds-is-open" data-collapsible-section-id={activity.Id}>
-                            <span class="slds-assistive-text">{activity.Name}</span>
-                            <div class="slds-media">
-                                <div class="slds-media__figure" style="padding-top: 5px;">
-                                    <lightning-button-icon icon-name="utility:switch"
-                                                            data-button-id={activity.Id}
-                                                            class="slds-timeline__details-action-icon" variant="bare"
-                                                            onclick={handleSectionToggle}></lightning-button-icon>
-                                    <div class="slds-icon_container slds-timeline__icon" title={activity.title__c}>
-                                        <lightning-icon icon-name={activity.icon__c}  size="small" alternative-text={activity.title__c} title={activity.title__c}></lightning-icon>
-                                    </div>
-                                </div>
-                                <div class="slds-media__body">
-                                    <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
-                                        <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space slds-text-heading_small">
-                                            <h3>
-                                                <strong>{activity.title__c}</strong>
-                                            </h3>
-                                            </div>
-                                            <div class="slds-timeline__actions slds-timeline__actions_inline">
-                                                <p class="slds-timeline__date"><lightning-formatted-date-time value={activity.createdDate__c} hour="2-digit" year="numeric" month="short" day="2-digit" hour12={ampm} minute="2-digit"></lightning-formatted-date-time></p>
-                                                <lightning-button-menu alternative-text="Show menu" menu-alignment="right" data-id={activity.Id} data-title={activity.title__c} onselect={handleMenuSelect}>
-                                                    <lightning-menu-item value="edit" label="Edit"  ></lightning-menu-item>
-                                                    <lightning-menu-item value="delete" label="Delete"></lightning-menu-item>
-                                                </lightning-button-menu>
-                                            </div>
-                                    </div>
-                                    <article class="slds-timeline__item_details" style="padding: 0;">
-                                          <p class="slds-p-top_x-small">{activity.description__c}</p>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+            <template if:true={activities}>
+                <template if:true={loading}>
+                    <lightning-spinner alternative-text="Loading"></lightning-spinner>
                 </template>
-            </ul>
-        </template>
-        <template if:true={showNewActivityButton}>    
-            <lightning-button label="Add new activity" title="Add new activity" icon-name="utility:add" class="slds-m-left_x-small" onclick={openActivityModalNew}></lightning-button>
-        </template>
+                <template if:false={loading}>
+                        <ul class="slds-timeline slds-p-left_x-small">
+                            <template for:each={activities} for:item="activity">
+                                <li key={activity.Id}>
+                                    <div class="slds-timeline__item_expandable slds-is-open" data-collapsible-section-id={activity.Id}>
+                                        <span class="slds-assistive-text">{activity.Name}</span>
+                                        <div class="slds-media">
+                                            <div class="slds-media__figure" style="padding-top: 5px;">
+                                                <lightning-button-icon icon-name="utility:switch"
+                                                                        data-button-id={activity.Id}
+                                                                        class="slds-timeline__details-action-icon" variant="bare"
+                                                                        onclick={handleSectionToggle}></lightning-button-icon>
+                                                <div class="slds-icon_container slds-timeline__icon" title={activity.title__c}>
+                                                    <lightning-icon icon-name={activity.icon__c}  size="small" alternative-text={activity.title__c} title={activity.title__c}></lightning-icon>
+                                                </div>
+                                            </div>
+                                            <div class="slds-media__body">
+                                                <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
+                                                    <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space slds-text-heading_small">
+                                                        <h3>
+                                                            <strong>{activity.title__c}</strong>
+                                                        </h3>
+                                                        </div>
+                                                        <div class="slds-timeline__actions slds-timeline__actions_inline">
+                                                            <p class="slds-timeline__date"><lightning-formatted-date-time value={activity.createdDate__c} hour="2-digit" year="numeric" month="short" day="2-digit" hour12={ampm} minute="2-digit"></lightning-formatted-date-time></p>
+                                                            <lightning-button-menu alternative-text="Show menu" menu-alignment="right" data-id={activity.Id} data-title={activity.title__c} onselect={handleMenuSelect}>
+                                                                <lightning-menu-item value="edit" label="Edit"  ></lightning-menu-item>
+                                                                <lightning-menu-item value="delete" label="Delete"></lightning-menu-item>
+                                                            </lightning-button-menu>
+                                                        </div>
+                                                </div>
+                                                <article class="slds-timeline__item_details" style="padding: 0;">
+                                                    <p class="slds-p-top_x-small">{activity.description__c}</p>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                </template>        
+            </template>
+            <template if:true={showNewActivityButton}>    
+                <lightning-button label="Add new activity" title="Add new activity" icon-name="utility:add" class="slds-m-left_x-small" onclick={openActivityModalNew}></lightning-button>
+                <lightning-button-icon icon-name="utility:feed"  variant="bare" alternative-text="Stream last data" class="slds-m-left_xx-small" title="Stream last data" onclick={invokeStreaming}></lightning-button-icon>
+            </template>
     </lightning-card>
     <c-activity-modal-new is-activity-modal-new-open={isActivityModalNewOpen} title="Create new activity"  related-to-id={recordId} onsuccess={submitActivityModaNew} onclose={closeActivityModalNew}></c-activity-modal-new>
     <c-activity-modal-edit is-activity-modal-edit-open={isActivityModalEditOpen} title="Edit activity" activity-id={activityToEditId} onsuccess={submitActivityModalEdit} onclose={closeActivityModalEdit}></c-activity-modal-edit>
