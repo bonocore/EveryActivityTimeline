@@ -25,6 +25,11 @@
         <field>GB_Timeline_Activity__c.title__c</field>
         <readable>true</readable>
     </fieldPermissions>
+     <fieldPermissions>
+        <editable>true</editable>
+        <field>GB_Timeline_Activity__c.stream_hide__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>GB Timeline Activity Permset</label>
     <objectPermissions>

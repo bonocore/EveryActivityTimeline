@@ -1,5 +1,5 @@
 {
-  "orgName": "gbonocore company",
+  "orgName": "gbonocore",
   "edition": "Developer",
   "features": ["EnableSetPasswordInApi"],
   "settings": {
