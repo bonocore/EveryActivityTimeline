@@ -65,4 +65,32 @@ public with sharing class GB_Timeline_Activity_Controller {
       activityToUpdate.stream_hide__c = false;
      update activityToUpdate;
     }
+
+    @AuraEnabled(cacheable=true scope='global')
+    public static Id retrieveRelatedIndividualId(String recordId) {
+        System.debug('Related ID '+recordId);
+        Id id = recordId;
+        List<SObject> toRet = new List<SObject>();
+        System.debug('ID '+id);
+        if(id.getsobjecttype() == Case.SObjectType) 
+        {
+           toRet = Database.query('select Contact.Id from Case where ID = :recordId');
+        }
+       /* if(id.getsobjecttype() == VoiceCall.SObjectType) 
+        {
+            toRet = Database.query('select Contact__r.Id from VoiceCall where ID = :recordId');
+        }
+        if(id.getsobjecttype() == LiveChatTranscript.SObjectType) 
+        {
+            toRet = Database.query('select Contact.Id from LiveChatTranscript where ID = :recordId');
+        }*/
+
+        System.debug('ToRet '+toRet);
+        if (!toRet.isEmpty()) { 
+            id = toRet.get(0).Id;
+         }
+        
+        System.debug('Id ToRet '+id);
+        return id;
+    }
 }

@@ -1,5 +1,6 @@
 import { LightningElement,api,wire,track } from 'lwc';
 import getRelatedTimelineActivities from '@salesforce/apex/GB_Timeline_Activity_Controller.getRelatedTimelineActivities';
+import getAllTimelineActivities from '@salesforce/apex/GB_Timeline_Activity_Controller.getAllTimelineActivities';
 import { refreshApex } from '@salesforce/apex';
 import LightningConfirm from 'lightning/confirm';
 import { deleteRecord } from 'lightning/uiRecordApi';
@@ -28,13 +29,10 @@ export default class ActivityTimeline extends LightningElement {
     wiredActivitiesResult; //useful for forcing refresh
 
     //event streaming. Using cometd directly as empAPI is not supported in community so far 
-    libInitialized = false;
+    /*libInitialized = false;
     @track sessionId;
     @track error;
-    
-
-
-    
+    */
    
     @wire(getRelatedTimelineActivities, {relatedToId: '$recordId'}) 
     wiredActivities(result){
@@ -133,7 +131,7 @@ export default class ActivityTimeline extends LightningElement {
 
 
    // custom event streaming code
-    
+   /* 
     @wire(getSessionId)
     wiredSessionId({ error, data }) {
      if (data) {
@@ -190,5 +188,5 @@ export default class ActivityTimeline extends LightningElement {
         }
       });
    }
-   
+   */
 }
