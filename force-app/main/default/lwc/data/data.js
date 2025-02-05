@@ -28,4 +28,6 @@ export const icons = [
     { label: 'Trailhead', value: 'standard:trailhead_alt' },
     { label: 'TV', value: 'custom:custom99' },
     { label: 'Web', value: 'custom:custom68' },
+    { label: 'Car', value: 'custom:custom31' },
+    { label: 'Car', value: 'custom:custom98' },
 ];
