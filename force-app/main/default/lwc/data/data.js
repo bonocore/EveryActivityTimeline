@@ -29,5 +29,5 @@ export const icons = [
     { label: 'TV', value: 'custom:custom99' },
     { label: 'Web', value: 'custom:custom68' },
     { label: 'Car', value: 'custom:custom31' },
-    { label: 'Car', value: 'custom:custom98' },
+    { label: 'Truck', value: 'custom:custom98' },
 ];
